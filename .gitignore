@@ -1,0 +1,6 @@
+.vscode
+beam
+beam64
+venv
+*.txt*
+credentials.json

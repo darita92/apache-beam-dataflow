@@ -8,11 +8,11 @@ from apache_beam.options.pipeline_options import StandardOptions
 from apache_beam.io import ReadFromText, WriteToText
 
 
-input_filename = 'gs://hn-dataflow-intro/input-1gb.txt'
-output_filename = 'gs://hn-dataflow-intro/output.txt'
+input_filename = 'gs://ipns-reports.appspot.com/input-377k.txt'
+output_filename = 'gs://ipns-reports.appspot.com/output.txt'
 
-dataflow_options = ['--project=hnacino-sandbox', '--job_name=test-job', '--temp_location=gs://hn-dataflow-intro/temp']
-dataflow_options.append('--staging_location=gs://hn-dataflow-intro/stage')
+dataflow_options = ['--project=ipns-reports', '--job_name=test-job', '--temp_location=gs://ipns-reports.appspot.com/temp']
+dataflow_options.append('--staging_location=gs://ipns-reports.appspot.com/stage')
 options = PipelineOptions(dataflow_options)
 gcloud_options = options.view_as(GoogleCloudOptions)
 

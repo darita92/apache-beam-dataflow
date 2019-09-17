@@ -10,20 +10,12 @@ from apache_beam.io.textio import ReadFromText, WriteToText
 input_filename = 'input-377k.txt'
 output_filename = 'output.txt'
 
-# input_filename = 'gs://hn-dataflow-intro/input.txt'
-# output_filename = 'gs://hn-dataflow-intro/output.txt'
-
 options = PipelineOptions()
 gcloud_options = options.view_as(GoogleCloudOptions)
 gcloud_options.job_name = 'test-job'
-# gcloud_options.project = 'hnacino-sandbox'
-# gcloud_options.temp_location = 'gs://hn-dataflow-intro/temp'
-# gcloud_options.staging_location = "gs://hn-dataflow-intro/stage"
 
 # Local runner
 options.view_as(StandardOptions).runner = 'direct'
-# Dataflow runner
-# options.view_as(StandardOptions).runner = 'dataflow'
 
 
 class Split(beam.DoFn):
